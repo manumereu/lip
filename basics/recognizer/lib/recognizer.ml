@@ -5,7 +5,7 @@ let rec lang1 l = match l with
 
 let rec other l = match l with
 	  [] -> true
-	| x::t -> x = '1' && other t
+	| x::s -> x = '1' && other s
 ;;
 
 let lang2 l = match l with 
