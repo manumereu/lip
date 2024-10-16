@@ -33,11 +33,11 @@ let palindromes : grammar = {
     terminals = [ '0'; '1' ];
     productions =
       [
-        S --> "0S0";  (* Enclose the string with two 0s *)
-        S --> "1S1";  (* Enclose the string with two 1s *)
-        S --> "0";    (* Single character palindrome: "0" *)
-        S --> "1";    (* Single character palindrome: "1" *)
-        S --> "";     (* Empty string, which is trivially a palindrome *)
+        S --> "0S0";  
+        S --> "1S1";  
+        S --> "0";    
+        S --> "1";    
+        S --> "";     
       ];
     start = S;
   }
@@ -51,11 +51,10 @@ let balanced_parentheses : grammar =
     terminals = [ '('; ')'; '['; ']'; '{'; '}' ];
     productions =
       [
-        S --> "(S)";   (* Matching parentheses: () *)
-        S --> "[S]";   (* Matching brackets: [] *)
-        S --> "{S}";   (* Matching braces: {} *)
-        S --> "SS";    (* Concatenation of two valid balanced sequences *)
-        S --> "";      (* Empty string, which is balanced by definition *)
+        S --> "(S)";   
+        S --> "[S]";   
+        S --> "{S}";   
+        S --> "";     
       ];
     start = S;
   }
@@ -74,10 +73,9 @@ let same_amount : grammar =
     terminals = [ '0'; '1' ];
     productions =
       [
-        S --> "0S1";   (* Add a 0 and a corresponding 1 *)
-        S --> "1S0";   (* Add a 1 and a corresponding 0 *)
-        S --> "SS";    (* Concatenate two balanced sequences *)
-        S --> "";      (* Empty string, which trivially has equal 0s and 1s *)
+        S --> "0S1";
+        S --> "1S0";   
+        S --> "";      
       ];
     start = S;
   }
