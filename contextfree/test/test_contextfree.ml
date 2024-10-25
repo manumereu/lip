@@ -20,12 +20,12 @@ let%test "palindromes_2" = derive palindromes [0;1;4] |> to_string = "0110"
 let%test "palindromes_3" = derive palindromes [0;1;1;1;2;4] |> to_string = "011101110"
 
 (* #### Exercise 3 *)
-let%test "balanced_parentheses_1" = derive balanced_parentheses [ (* FILL IN HERE *) ] |> to_string = "()[]{}"
-let%test "balanced_parentheses_2" = derive balanced_parentheses [ (* FILL IN HERE *) ] |> to_string = "({})[]"
-let%test "balanced_parentheses_3" = derive balanced_parentheses [ (* FILL IN HERE *) ] |> to_string = "({[][{}()]})"
+let%test "balanced_parentheses_1" = derive balanced_parentheses [0;1;2;9] |> to_string = "()[]{}"
+let%test "balanced_parentheses_2" = derive balanced_parentheses [7;3;2;9] |> to_string = "({})[]"
+let%test "balanced_parentheses_3" = derive balanced_parentheses [3;5;1;4;2;0;9] |> to_string = "({[][{}()]})"
 
 (* #### Exercise 5 *)
-let%test "zero_one_same_1" = derive same_amount [ (* FILL IN HERE *) ] |> to_string = ""
-let%test "zero_one_same_2" = derive same_amount [ (* FILL IN HERE *) ] |> to_string = "1001"
-let%test "zero_one_same_3" = derive same_amount [ (* FILL IN HERE *) ] |> to_string = "00110101"
-let%test "zero_one_same_4" = derive same_amount [ (* FILL IN HERE *) ] |> to_string = "10001110"
+let%test "zero_one_same_1" = derive same_amount [6] |> to_string = ""
+let%test "zero_one_same_2" = derive same_amount [3;2;6] |> to_string = "1001"
+let%test "zero_one_same_3" = derive same_amount [0;2;3;3;6] |> to_string = "00110101"
+let%test "zero_one_same_4" = derive same_amount [1;0;0;0;6] |> to_string = "10001110"
