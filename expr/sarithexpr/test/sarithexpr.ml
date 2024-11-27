@@ -1,5 +1,5 @@
 open SarithexprLib.Main
-
+open SarithexprLib.Ast
 type wexprval = exprtype option
 
 let string_of_wtype = function 

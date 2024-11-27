@@ -1,5 +1,5 @@
 (library
- (name arithexprTest)
+ (name sarithexprTest)
  (inline_tests)
  (preprocess (pps ppx_inline_test))
- (libraries arithexprLib))
+ (libraries sarithexprLib))

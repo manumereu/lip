@@ -1,5 +1,4 @@
 open SarithexprLib.Main
-  
 (* read file, and output it to a string *)
 
 let read_file filename =
