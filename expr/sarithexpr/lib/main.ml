@@ -1,6 +1,11 @@
 open Ast
 exception TypeError of string;;
 
+let rec is_nv = function 
+    Zero -> true
+  | Succ n -> is_nv n
+  | _ -> false
+
 let string_of_type = function
  | BoolT ->"Bool"
  | NatT -> "Nat"
@@ -31,7 +36,6 @@ let parse (s : string) : expr =
   let lexbuf = Lexing.from_string s in
   let ast = Parser.prog Lexer.read lexbuf in
   ast
-
 
 exception NoRuleApplies
 
@@ -94,10 +98,6 @@ let rec eval : expr -> exprval = function
       | Bool b0 -> Bool (not b0)
       | _ -> failwith "Errore")
 
-let rec is_nv = function
-  | Zero -> true
-  | Succ e1 -> is_nv e1 
-  | _ -> false
 
 
   let rec typecheck : expr -> exprtype = function
@@ -108,7 +108,7 @@ let rec is_nv = function
      NatT -> BoolT
     | _ -> raise (TypeError "Impossibile"))
   | Pred e0 -> (match typecheck e0 with 
-    | NatT -> NatT
+    | NatT when e0 <> Zero -> NatT
     | _ -> raise (TypeError "Impossibile"))
   | Succ e0 -> (match typecheck e0 with 
     | NatT -> NatT
